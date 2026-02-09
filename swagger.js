@@ -6,8 +6,8 @@ const doc = {
     description: "API documentation for Products and Orders collections",
   },
   // When you deploy to Render, change this to your Render URL
-  host: "localhost:3000",
-  schemes: ["http"],
+  host: "my-ecommerce-api-k4mc.onrender.com",
+  schemes: ["https"],
   definitions: {
     Product: {
       name: "Gaming Keyboard",
