@@ -1,5 +1,10 @@
 const router = require('express').Router();
 
+router.get('/', (req, res) => {
+  // Provides a professional landing message
+  res.send('Welcome to the E-Commerce API. Please visit /api-docs for documentation.');
+});
+
 // Route for Swagger documentation
 router.use('/api-docs', require('./swagger'));
 
