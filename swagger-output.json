@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "E-Commerce API",
-    "description": "API documentation for Products and Orders collections",
+    "description": "API documentation for Products, Orders, Users, and Reviews collections. Includes OAuth protection for sensitive routes.",
     "version": "1.0.0"
   },
   "host": "my-ecommerce-api-k4mc.onrender.com",
@@ -11,7 +11,47 @@
     "https"
   ],
   "paths": {
-    "/api-docs/": {
+    "/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/login": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/logout": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/github/callback": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api-docs": {
       "get": {
         "description": "",
         "responses": {
@@ -51,6 +91,9 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
           }
         }
       }
@@ -103,6 +146,9 @@
           "400": {
             "description": "Bad Request"
           },
+          "401": {
+            "description": "Unauthorized"
+          },
           "404": {
             "description": "Not Found"
           }
@@ -121,6 +167,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
           },
           "404": {
             "description": "Not Found"
@@ -161,6 +210,9 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
           }
         }
       }
@@ -213,6 +265,9 @@
           "400": {
             "description": "Bad Request"
           },
+          "401": {
+            "description": "Unauthorized"
+          },
           "404": {
             "description": "Not Found"
           }
@@ -231,6 +286,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
           },
           "404": {
             "description": "Not Found"
@@ -282,12 +340,57 @@
         "items": {
           "type": "array",
           "example": [
-            "Product ID 1",
-            "Product ID 2"
+            "640f12345678901234567890"
           ],
           "items": {
             "type": "string"
           }
+        },
+        "status": {
+          "type": "string",
+          "example": "Shipped"
+        }
+      }
+    },
+    "User": {
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": "string",
+          "example": "johndoe123"
+        },
+        "email": {
+          "type": "string",
+          "example": "john@example.com"
+        },
+        "displayName": {
+          "type": "string",
+          "example": "John Doe"
+        },
+        "role": {
+          "type": "string",
+          "example": "Customer"
+        }
+      }
+    },
+    "Review": {
+      "type": "object",
+      "properties": {
+        "productId": {
+          "type": "string",
+          "example": "640f12345678901234567890"
+        },
+        "rating": {
+          "type": "number",
+          "example": 5
+        },
+        "comment": {
+          "type": "string",
+          "example": "Excellent build quality and fast shipping!"
+        },
+        "date": {
+          "type": "string",
+          "example": "2026-02-15"
         }
       }
     }
