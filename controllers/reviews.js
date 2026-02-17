@@ -21,6 +21,6 @@ const createReview = async (req, res) => {
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
-};
+}; 
 
 module.exports = { getAllReviews, createReview };
