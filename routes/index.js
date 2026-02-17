@@ -22,7 +22,7 @@ router.get("/logout", function (req, res, next) {
   });
 });
 router.get(
-  "/github/callback",
+  "auth/github/callback",
   passport.authenticate("github", {
     failureRedirect: "/api-docs",
     session: false,
