@@ -10,6 +10,7 @@ const getAllReviews = async (req, res) => {
 };
 
 const createReview = async (req, res) => {
+    // #swagger.security = [{ "github_auth": [] }]
     /* #swagger.parameters['body'] = {
         in: 'body',
         schema: { $ref: '#/definitions/Review' }

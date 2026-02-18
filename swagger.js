@@ -9,6 +9,11 @@ const doc = {
 
   host: "my-ecommerce-api-k4mc.onrender.com",
   schemes: ["https"],
+  security: [
+    {
+      github_auth: [],
+    },
+  ],
   securityDefinitions: {
     github_auth: {
       type: "oauth2",

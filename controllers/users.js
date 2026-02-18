@@ -10,6 +10,7 @@ const getAllUsers = async (req, res) => {
 };
 
 const createUser = async (req, res) => {
+    // #swagger.security = [{ "github_auth": [] }]
     /* #swagger.parameters['body'] = {
         in: 'body',
         schema: { $ref: '#/definitions/User' }

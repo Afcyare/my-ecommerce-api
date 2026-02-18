@@ -23,6 +23,7 @@ const getProductById = async (req, res) => {
 
 // Add new product to database
 const createProduct = async (req, res) => {
+  // #swagger.security = [{ "github_auth": [] }]
     /* #swagger.parameters['body'] = {
             in: 'body',
             description: 'Add new product',
@@ -39,6 +40,7 @@ const createProduct = async (req, res) => {
 
 // Update product by ID
 const updateProduct = async (req, res) => {
+  // #swagger.security = [{ "github_auth": [] }]
     /* #swagger.parameters['body'] = {
             in: 'body',
             description: 'Update product information',
@@ -55,6 +57,7 @@ const updateProduct = async (req, res) => {
 
 // Delete product by ID
 const deleteProduct = async (req, res) => {
+  // #swagger.security = [{ "github_auth": [] }]
   try {
     const product = await Product.findByIdAndDelete(req.params.id);
     if (!product) return res.status(404).json({ message: 'Product not found' });

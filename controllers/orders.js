@@ -26,6 +26,7 @@ const getOrderById = async (req, res) => {
 
 // Create a new order
 const createOrder = async (req, res) => {
+  // #swagger.security = [{ "github_auth": [] }]
   /* #swagger.parameters['body'] = {
             in: 'body',
             description: 'Add new order',
@@ -42,6 +43,7 @@ const createOrder = async (req, res) => {
 
 // Update order status or items
 const updateOrder = async (req, res) => {
+  // #swagger.security = [{ "github_auth": [] }]
   /* #swagger.parameters['body'] = {
             in: 'body',
             description: 'Update order information',
@@ -60,6 +62,7 @@ const updateOrder = async (req, res) => {
 
 // Delete order from database
 const deleteOrder = async (req, res) => {
+  // #swagger.security = [{ "github_auth": [] }]
   try {
     const order = await Order.findByIdAndDelete(req.params.id);
     if (!order) return res.status(404).json({ message: "Order not found" });
